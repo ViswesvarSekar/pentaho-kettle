@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>pentaho-kettle</groupId>
+    <artifactId>pentaho-kettle-parent-pom</artifactId>
+    <version>8.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>pentaho-kettle</groupId>
+  <artifactId>kettle-ui-swt</artifactId>
+  <version>8.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Pentaho Data Integration DB Dialog</name>
+
+  <properties>
+    <license.inceptionYear>2002</license.inceptionYear>
+    <license.licenseName>apache_v2</license.licenseName>
+
+    <kettle.version>8.0-SNAPSHOT</kettle.version>
+    <pentaho-xul.version>8.0-SNAPSHOT</pentaho-xul.version>
+    <org.eclipse.swt.version>4.6</org.eclipse.swt.version>
+    <junit.version>4.7</junit.version>
+    <mockito.version>1.9.5</mockito.version>
+  </properties>
+
+  <dependencies>
+
+    <!-- Kettle dependencies -->
+    <dependency>
+      <groupId>pentaho-kettle</groupId>
+      <artifactId>kettle-core</artifactId>
+      <version>${kettle.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-kettle</groupId>
+      <artifactId>kettle-engine</artifactId>
+      <version>${kettle.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-kettle</groupId>
+      <artifactId>kettle-dbdialog</artifactId>
+      <version>${kettle.version}</version>
+    </dependency>
+
+
+    <!-- Pentaho (non-Kettle) dependencies -->
+
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>pentaho-vfs-browser</artifactId>
+      <version>${pentaho-xul.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>pentaho-xul-core</artifactId>
+      <version>${pentaho-xul.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>pentaho-xul-swt</artifactId>
+      <version>${pentaho-xul.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>pentaho-xul-swing</artifactId>
+      <version>${pentaho-xul.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>pentaho-capability-manager</artifactId>
+      <version>${pentaho-xul.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- Third-party (external) dependencies -->
+
+    <dependency>
+      <groupId>org.eclipse.swt</groupId>
+      <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+      <version>${org.eclipse.swt.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>common</artifactId>
+      <version>3.3.0-v20070426</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse</groupId>
+      <artifactId>jface</artifactId>
+      <version>3.3.0-I20070606-0010</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>1.0.13</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>rhino</groupId>
+      <artifactId>js</artifactId>
+      <version>1.7R3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+<!--Test Dependency-->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>pentaho-kettle</groupId>
+      <artifactId>kettle-engine-test</artifactId>
+      <version>${kettle.version}</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+
+    <!--ADDITIONALS-->
+
+
+    <!--dependency>
+    <groupId>pentaho</groupId>
+    <artifactId>metastore</artifactId>
+    <version>${kettle.version}</version>
+    <scope>provided</scope>
+    <exclusions>
+      <exclusion>
+        <artifactId>*</artifactId>
+        <groupId>*</groupId>
+      </exclusion>
+    </exclusions>
+    </dependency-->
+
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>pentaho-vfs-browser</artifactId>
+      <version>${pentaho-xul.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.ini4j</groupId>
+      <artifactId>ini4j</artifactId>
+      <version>0.5.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.snmp4j</groupId>
+      <artifactId>snmp4j</artifactId>
+      <version>2.5.5</version>
+    </dependency>
+    <dependency>
+      <groupId>net.open-esb.core</groupId>
+      <artifactId>wsdl</artifactId>
+      <version>2.4.3</version>
+    </dependency>
+    <dependency>
+      <groupId>ldapjdk</groupId>
+      <artifactId>ldapjdk</artifactId>
+      <version>20000524</version>
+    </dependency>
+    <dependency>
+      <groupId>org.daverog</groupId>
+      <artifactId>json-ld-tree</artifactId>
+      <version>1.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.ovirt.engine.api</groupId>
+      <artifactId>metamodel-server</artifactId>
+      <version>1.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.2.131</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.metro</groupId>
+      <artifactId>webservices-rt</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-library-optimized</groupId>
+      <artifactId>libformula</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.healthmarketscience.jackcess</groupId>
+      <artifactId>jackcess</artifactId>
+      <version>1.2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>pentaho-reporting-engine-optimized</groupId>
+      <artifactId>pentaho-reporting-engine-classic-core</artifactId>
+      <version>3.8.0-GA</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.marschall</groupId>
+      <artifactId>svn-diffstat</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>infobright</groupId>
+      <artifactId>infobright-core</artifactId>
+      <version>3.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.12</version>
+    </dependency>
+    <dependency>
+      <groupId>com.enterprisedt</groupId>
+      <artifactId>edtFTPj</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.castor</groupId>
+      <artifactId>castor</artifactId>
+      <version>1.0.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.daisy.maven</groupId>
+      <artifactId>xproc-engine-api</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.pentaho</groupId>
+      <artifactId>pdi-engine-api</artifactId>
+      <version>8.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>ftp4che</groupId>
+      <artifactId>ftp4che</artifactId>
+      <version>0.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.core</groupId>
+      <artifactId>commands</artifactId>
+      <version>3.3.0-I20070605-0010</version>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <plugins>
+      <!-- Copies Shared Resource from assembly project -->
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-appCtx</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/classes/ui</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>../assembly/package-res/ui</directory>
+                  <includes>
+                    <include>laf.properties</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
